@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribuidora Multi Repuestos GZ - Tienda Online</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+    <div class="loader" id="loader">
+        <div class="loader__card">
+            <img src="img/logo.png" alt="Distribuidora Multi Repuestos GZ" class="loader__logo">
+            <h1 class="loader__title">Distribuidora Multi Repuestos GZ</h1>
+            <p class="loader__subtitle">Cargando tienda en línea...</p>
+            <div class="loader__bar">
+                <div class="loader__bar-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <header class="header">
+        <div class="container header__content">
+            <div class="logo">
+                <img src="img/logo.png" alt="Distribuidora Multi Repuestos GZ" />
+                <span>Repuestos GZ</span>
+            </div>
+
+            <nav class="nav" id="navMenu">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>       
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <div class="header__icons">
+                <button class="cart-btn" id="cartButton">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+                <button class="menu-btn" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="hero" id="inicio">
+        <div class="container hero__content">
+            <div class="hero__text">
+                <h1>Repuestos para moto con atención personalizada</h1>
+                <p>
+                    Compra en línea y coordina tu pedido por WhatsApp con Distribuidora Multi Repuestos GZ. 
+                    Calidad, buen precio y servicio para talleres y motociclistas.
+                </p>
+                <a href="#productos" class="btn-primary">Ver catálogo</a>
+            </div>
+            <div class="hero__image">
+                <div class="hero__badge">GZ</div>
+                <img src="img/moto-deportiva.jpg" alt="Moto deportiva">
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="filters">
+        <div class="container filters__content">
+            <div class="filters__group">
+                <label for="categoryFilter">Categoría</label>
+                <select id="categoryFilter">
+                    <option value="todos">Todos</option>
+                    <option value="frenos">Frenos</option>
+                    <option value="motor">Motor</option>
+                    <option value="transmision">Transmisión</option>
+                    <option value="iluminacion">Iluminación</option>
+                    <option value="accesorios">Accesorios</option>
+                </select>
+            </div>
+
+            <div class="filters__group">
+                <label for="searchInput">Buscar</label>
+                <input type="text" id="searchInput" placeholder="Ej: pastillas, aceite, casco..." />
+            </div>
+
+            <div class="filters__group filters__group--badge">
+                <span class="badge">Catálogo actualizado constantemente</span>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="productos" id="productos">
+        <div class="container">
+            <h2>Catálogo de productos</h2>
+            <p class="section-subtitle">
+                Explora nuestra selección de repuestos y accesorios para moto. 
+                Añade al carrito y envía tu pedido para coordinar entrega y forma de pago.
+            </p>
+            <div class="productos__grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    
+    <section class="contacto" id="contacto">
+        <div class="container contacto__content">
+            <div>
+                <h2>Contacto</h2>
+                <p>Estamos listos para ayudarte con cualquier duda, pedido especial o cotización.</p>
+                <ul class="contacto__list">
+                    <li><strong>Nombre comercial:</strong> Distribuidora Multi Repuestos GZ</li>
+                    <li><strong>Dirección:</strong> Ciudad Portoviejo</li>               
+                    <li><strong>Horario:</strong> Lunes a Domingo, 9:00AM - 22:00PM</li>
+                </ul>
+            </div>
+
+            <form class="contacto__form" onsubmit="event.preventDefault(); alert('Gracias por tu mensaje, pronto nos pondremos en contacto.');">
+                <h3>Escríbenos</h3>
+                <input type="text" placeholder="Nombre" required />
+                <input type="email" placeholder="Correo" required />
+                <textarea rows="4" placeholder="Cuéntanos qué necesitas"></textarea>
+                <button type="submit" class="btn-primary">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="container footer__content">
+            <p>© <span id="year"></span> Distribuidora Multi Repuestos GZ. Todos los derechos reservados.</p>
+            <span class="footer__dev">Desarrollado por Gianluca Web</span>
+        </div>
+    </footer>
+
+    
+    <aside class="cart-panel" id="cartPanel">
+        <div class="cart-panel__header">
+            <h3>Tu carrito</h3>
+            <button id="closeCart">✕</button>
+        </div>
+        <div class="cart-panel__body" id="cartItems"></div>
+        <div class="cart-panel__footer">
+            <div class="cart-panel__total">
+                <span>Total:</span>
+                <strong id="cartTotal">$0.00</strong>
+            </div>
+            <button class="btn-primary btn-full" id="checkoutButton">
+                Finalizar pedido por WhatsApp
+            </button>
+            <p class="cart-panel__note">
+                Los precios están sujetos a cambios. Confirmaremos stock, precios y formas de pago contigo por WhatsApp.
+            </p>
+        </div>
+    </aside>
+
+   
+    <div class="backdrop" id="backdrop"></div>
+
+    <button id="whatsappFloating" class="whatsapp-btn" type="button">
+        💬
+    </button>
+
+    
+    <div class="modal" id="checkoutModal">
+        <div class="modal__content">
+            <button class="modal__close" id="checkoutClose">✕</button>
+            <h3 class="modal__title">Datos para tu pedido</h3>
+            <p class="modal__text">
+                Ingresa tus datos para identificar tu pedido y agilizar la atención por WhatsApp.
+            </p>
+
+            <form id="checkoutForm" class="modal__form">
+                <div class="modal__form-group">
+                    <label for="checkoutName">Nombre completo</label>
+                    <input type="text" id="checkoutName" required placeholder="Ej: Juan Pérez" />
+                </div>
+
+                <div class="modal__form-group">
+                    <label for="checkoutId">Cédula / ID (Ecuador)</label>
+                    <input type="text" id="checkoutId" required placeholder="Ej: 0102030405" />
+                    <small id="checkoutIdError" style="color:#f97316; font-size:0.75rem; display:none;">
+                        Cédula inválida. Verifica el número e inténtalo nuevamente.
+                    </small>
+                </div>
+
+                <button type="submit" class="btn-primary btn-full">
+                    Continuar a WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    
+    <script src="js/products-data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
