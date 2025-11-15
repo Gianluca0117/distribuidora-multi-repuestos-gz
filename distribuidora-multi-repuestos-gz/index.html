@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribuidora Multi Repuestos GZ - Catálogo de Repuestos</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- PANTALLA DE CARGA -->
+    <div class="loader" id="loader">
+        <div class="loader__content">
+            <img src="img/logo.png" alt="Distribuidora Multi Repuestos GZ" class="loader__logo">
+            <h1>Distribuidora Multi Repuestos GZ</h1>
+            <p>Preparando tu catálogo de repuestos...</p>
+            <div class="loader__bar">
+                <span class="loader__bar-inner"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="header">
+        <div class="container header__content">
+            <div class="logo">
+                <img src="img/logo.png" alt="Distribuidora Multi Repuestos GZ" />
+                <span>Distribuidora Multi Repuestos GZ</span>
+            </div>
+
+            <nav class="nav" id="navMenu">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <div class="header__icons">
+                <button class="cart-btn" id="cartButton">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+                <button class="menu-btn" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO / INICIO -->
+    <section class="hero" id="inicio">
+        <div class="container hero__content">
+            <div class="hero__text">
+                <h1>Repuestos y accesorios para tu moto</h1>
+                <p>
+                    Somos Distribuidora Multi Repuestos GZ. Encuentra los repuestos y accesorios
+                    que necesitas para tu moto, con asesoría personalizada y atención directa por WhatsApp.
+                </p>
+                <a href="#productos" class="btn-primary">Ver catálogo</a>
+            </div>
+            <div class="hero__image">
+                <img src="img/moto-deportiva.jpg" alt="Moto deportiva">
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTROS Y BUSCADOR -->
+    <section class="filters">
+        <div class="container filters__content">
+            <div class="filters__group">
+                <label for="categoryFilter">Categoría</label>
+                <select id="categoryFilter">
+                    <option value="todos">Todos</option>
+                    <option value="frenos">Frenos</option>
+                    <option value="motor">Motor</option>
+                    <option value="transmision">Transmisión</option>
+                    <option value="iluminacion">Iluminación</option>
+                    <option value="accesorios">Accesorios</option>
+                </select>
+            </div>
+
+            <div class="filters__group">
+                <label for="searchInput">Buscar</label>
+                <input type="text" id="searchInput" placeholder="Ej: disco de freno, bujía, casco..." />
+            </div>
+
+            <div class="filters__group filters__group--badge">
+                <span class="badge">Catálogo online actualizado</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="productos" id="productos">
+        <div class="container">
+            <h2>Catálogo de repuestos</h2>
+            <p class="section-subtitle">
+                Selección de repuestos y accesorios para distintos tipos de motos.
+            </p>
+
+            <div class="productos__grid" id="productGrid">
+                <!-- JS generará los productos aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTAS -->
+    <section class="ofertas" id="ofertas">
+        <div class="container ofertas__content">
+            <div>
+                <h2>Ofertas especiales</h2>
+                <p>
+                    Pregunta por nuestras promociones vigentes, combos de mantenimiento
+                    y descuentos por compras al por mayor.
+                </p>
+            </div>
+            <div class="ofertas__cards">
+                <article class="oferta-card">
+                    <h3>Combo Frenos Premium</h3>
+                    <p>Discos + pastillas + mano de obra (consulta condiciones).</p>
+                    <span class="oferta-card__precio">-20% OFF</span>
+                </article>
+                <article class="oferta-card">
+                    <h3>Mantenimiento completo</h3>
+                    <p>Cambio de aceite, revisión de frenos y ajuste general.</p>
+                    <span class="oferta-card__precio">Desde $49.99</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+        <div class="container contacto__content">
+            <div>
+                <h2>Contacto</h2>
+                <p>
+                    Escríbenos para consultas, cotizaciones o pedidos especiales.
+                    Te atenderemos lo más pronto posible.
+                </p>
+
+                <ul class="contacto__list">
+                    <li><strong>Nombre comercial:</strong> Distribuidora Multi Repuestos GZ</li>
+                    <li><strong>Dirección:</strong> Av. Principal #123, Ciudad Moto</li>
+                    <li><strong>Teléfono / WhatsApp:</strong> +593 96 848 6549</li>
+                    <li><strong>Horario:</strong> Lunes a Sábado, 9:00 - 18:00</li>
+                </ul>
+            </div>
+
+            <form class="contacto__form" onsubmit="event.preventDefault(); alert('Gracias por escribirnos. Te responderemos en breve.');">
+                <h3>Envíanos un mensaje</h3>
+                <input type="text" placeholder="Nombre" required />
+                <input type="email" placeholder="Correo" required />
+                <textarea rows="4" placeholder="Mensaje"></textarea>
+                <button type="submit" class="btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer__content">
+            <p>© <span id="year"></span> Distribuidora Multi Repuestos GZ. Todos los derechos reservados.</p>
+            <span class="footer__dev">Desarrollado por Gianluca</span>
+        </div>
+    </footer>
+
+    <!-- CARRITO LATERAL -->
+    <aside class="cart-panel" id="cartPanel">
+        <div class="cart-panel__header">
+            <h3>Tu carrito</h3>
+            <button id="closeCart">✕</button>
+        </div>
+        <div class="cart-panel__body" id="cartItems">
+            <!-- Items del carrito -->
+        </div>
+        <div class="cart-panel__footer">
+            <div class="cart-panel__total">
+                <span>Total:</span>
+                <strong id="cartTotal">$0.00</strong>
+            </div>
+            <button class="btn-primary btn-full" id="checkoutButton">
+                Finalizar pedido por WhatsApp
+            </button>
+            <p class="cart-panel__note">
+                El total es referencial. Confirmaremos disponibilidad y precio final contigo por WhatsApp.
+            </p>
+        </div>
+    </aside>
+
+    <!-- FONDO OSCURO PARA EL CARRITO -->
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/593968486549?text=Hola%20quiero%20cotizar%20repuestos%20de%20moto" 
+       class="whatsapp-btn" target="_blank" rel="noopener">
+        💬
+    </a>
+
+    <!-- PRIMERO LOS PRODUCTOS, LUEGO LA LÓGICA -->
+    <script src="js/products-data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
